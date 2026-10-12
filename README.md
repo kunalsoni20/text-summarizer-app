@@ -1,12 +1,3 @@
----
-title: Text Summarizer App
-emoji: 📝
-colorFrom: orange
-colorTo: yellow
-sdk: docker
-app_port: 7860
----
-
 # Text Summarizer App
 
 A FastAPI web application that summarizes text using a locally saved T5
@@ -85,15 +76,6 @@ Open <http://127.0.0.1:8000> in a browser.
 
 The first startup loads the model and may take a few seconds. CPU inference
 can also take several seconds for each summary.
-
-## Deploy on Hugging Face Spaces
-
-Create a new Space with **Docker** as the SDK, then upload or push this
-repository to the Space. The included `Dockerfile` starts FastAPI on port
-`7860`, which is the port configured in the Space metadata above.
-
-The Space may take a few minutes to build and start because it installs
-PyTorch and loads the local model weights.
 
 ## API usage
 
