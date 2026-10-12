@@ -3,6 +3,6 @@ fastapi
 jinja2
 pydantic
 sentencepiece
-torch==2.5.1+cpu
+torch==2.14.1+cpu
 transformers==4.46.3
 uvicorn
