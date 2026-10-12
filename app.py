@@ -36,7 +36,7 @@ def clean_data(text):
     return text
 
 def summarize_dialogue(dialogue : str) -> str:
-    dialogue = clean_data(dialogue) # clean
+    dialogue = f"summarize: {clean_data(dialogue)}"
 
     # tokenize
     inputs = tokenizer(
