@@ -4,5 +4,5 @@ jinja2
 pydantic
 sentencepiece
 torch==2.14.1+cpu
-transformers==4.46.3
+transformers==5.19.0
 uvicorn
