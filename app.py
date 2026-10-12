@@ -21,6 +21,7 @@ else:
     device = torch.device("cpu")
 
 model.to(device)
+model.eval()
 
 templates = Jinja2Templates(directory=".")
 
@@ -41,20 +42,19 @@ def summarize_dialogue(dialogue : str) -> str:
     inputs = tokenizer(
         dialogue,
         padding="max_length",
-        max_length=512,
+        max_length=384,
         truncation=True,
         return_tensors="pt"
     ).to(device)
 
-    # generate the summary => token ids
-    model.to(device)
-    targets = model.generate(
-        input_ids=inputs["input_ids"],
-        attention_mask=inputs["attention_mask"],
-        max_length=150,
-        num_beams=4,
-        early_stopping=True
-    )
+    with torch.inference_mode():
+        targets = model.generate(
+            input_ids=inputs["input_ids"],
+            attention_mask=inputs["attention_mask"],
+            max_length=80,
+            num_beams=2,
+            early_stopping=True,
+        )
     
     # decoded our output
     summary = tokenizer.decode(targets[0], skip_special_tokens=True) # EOS, SEP
