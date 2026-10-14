@@ -4,6 +4,20 @@ A FastAPI web application that summarizes text using a locally saved T5
 Transformer model. The project includes a simple browser interface and a JSON
 API endpoint.
 
+## Credits and provenance
+
+This project is based on the public
+[Summarizer-HF project by Shradha Khapra](https://github.com/shradha-khapra/Summarizer-HF).
+The current version keeps the original FastAPI/browser structure and includes
+local fixes and improvements for model execution, device detection, inference
+efficiency, English summarization task prompting, and local setup
+documentation.
+
+The upstream repository does not include a license file. Do not remove this
+attribution or represent the upstream code as entirely original work. Add
+license information only after confirming the permissions for the upstream
+code and model weights.
+
 ## Features
 
 - Text summarization through a browser-based UI
